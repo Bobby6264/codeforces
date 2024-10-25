@@ -1,0 +1,57 @@
+// Author: Karan Kumar Sethi
+#include <bits/stdc++.h>
+using namespace std;
+
+#define endl "\n" 
+typedef long long ll;
+#define rep(i,n) for(ll i=0; i<n;i++)
+#define repa(i,a,n) for(ll i=a; i<n; i++)
+#define repab(i,a,n,b) for(ll i=a;i<n;i=i+b)
+#define mod 1000000007
+#define pb push_back
+const int N = 2e5 + 20, inf = 1e9;
+
+signed main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        vector<vector<int>> a(n, vector<int>(n));
+        rep(i, n)
+        {
+            rep(j, n)
+            {
+                cin >> a[i][j];
+            }
+        }
+        int ans =0;
+        rep(i,n){
+            rep(j,n){
+                int maxi = 0;
+                int ii = i;int jj =j;
+                while(ii<n && jj<n){
+                    if(a[ii][jj]<0){
+                        maxi = max(maxi,abs(a[ii][jj]));
+                        a[ii][jj] = abs(a[ii][jj]);
+                    }
+                    ii +=1;
+                    jj +=1;
+                }
+                ans += maxi;
+            }
+        }
+        cout<<ans<<endl;
+    }
+}
