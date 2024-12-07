@@ -1,0 +1,52 @@
+class SGTree{
+    vector<int> segTRee;
+public:
+    SGTree(int n){
+        segTRee.resize(4*n);          
+    }
+    // function to build segment tree
+    void build(int ind, int low, int high , vector<int>& arr){
+        if(low == high){
+            segTRee[ind] = arr[low];
+            return;
+        }
+        int mid = (low + high)/2;
+        build(2*ind+1, low,mid,arr);
+        build(2*ind+2,mid+1,high,arr);
+        segTRee[ind]= min(segTRee[2*ind+1],segTRee[2*ind+2]);
+        return;
+    }
+
+    // function to query the segment tree
+    int query(int ind , int low , int high, int l, int r){
+        // no overlap
+        if(l < low || r > high){
+            return INT_MAX;
+        }
+        // complete overlap
+        if(low >=l && high <= r){
+            return segTRee[ind];
+        }
+
+        // partial 
+        int mid = (low + high)/2;
+        int left = query(2*ind+1,low,mid,l,r);
+        int right = query(2*ind+2,mid+1,high,l,r);
+        return min(left,right);
+    }
+
+    // function to update the segment tree
+    void update(int ind , int low , int high,int i , int val ){
+        if(low == high){
+            segTRee[ind] = val;
+            return;
+        }
+        int mid = (low + high)/2;
+        if(i <= mid){
+            update(2*ind+1,low,mid,i,val);
+        }else{
+            update(2*ind+2,mid+1,high,i,val);
+        }
+        segTRee[ind] = min(segTRee[2*ind+1],segTRee[2*ind+2]);
+    }
+};
