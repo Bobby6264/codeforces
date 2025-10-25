@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday - Magical Celebration</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Authentication Modal -->
+  <div id="auth-modal" class="auth-modal">
+    <div class="auth-content">
+      <div class="auth-header">
+        <h2>🎂 Birthday Authentication 🎂</h2>
+        <div class="auth-subtitle">Please answer this question to continue</div>
+      </div>
+      <div class="auth-body">
+        <div class="question">
+          <p>What do I call you? 💭</p>
+          <input type="text" id="auth-input" placeholder="Enter your answer..." autocomplete="off">
+          <button id="auth-submit" class="auth-btn">✨ Enter ✨</button>
+        </div>
+        <div id="auth-error" class="auth-error hidden">
+          ❌ Hmm, that's not quite right. Try again! 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content (initially hidden) -->
+  <div id="main-content" class="hidden">
+    <!-- Floating flowers container -->
+    <div id="flowers-container"></div>
+    
+    <!-- Animated background particles -->
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="container">
+      <div class="birthday-header">
+        <h1 class="main-title">🌸 Happy Birthday! 🌸</h1>
+        <p class="subtitle">Dear BUBU 💖</p>
+        <div class="decorative-line"></div>
+      </div>
+      
+      <div class="content-section">
+        <p class="birthday-message">Wishing you a day filled with love, laughter, and magical moments!</p>
+        
+        <div class="buttons-container">
+          <button id="reveal-btn" class="magic-btn">✨ Click for Magic ✨</button>
+        </div>
+        
+        <div id="surprise" class="hidden surprise-box">
+          <div class="surprise-content">
+            <h3>🎂 Special Message for my BUBU 🎉</h3>
+            <div class="scrollable-message">
+              <p>My dearest BUBU,</p>
+              
+              <p>Today is your special day, and I want you to know how incredibly amazing you are! You bring so much joy, laughter, and love into this world, and I feel so grateful to have you in my life.</p>
+              
+              <p>Your smile lights up every room you enter, and your kindness touches the hearts of everyone around you. You have this wonderful ability to make even the ordinary moments feel extraordinary, and that's just one of the many things that makes you so special.</p>
+              
+              <p>As you celebrate another year of your beautiful life, I want you to know that you deserve all the happiness, love, and wonderful surprises that this world has to offer. You've grown into such an incredible person, and I'm excited to see all the amazing things that this new year will bring for you.</p>
+              
+              <p>May your birthday be filled with magical moments, surrounded by the people who love you most. May your dreams continue to come true, and may you always remember how truly wonderful and loved you are.</p>
+              
+              <p>Here's to another year of adventures, laughter, unforgettable memories, and all the beautiful moments that make life so precious. You are absolutely amazing, and I hope your special day is just as amazing as you are!</p>
+              
+              <p>Happy Birthday, my dear BUBU! 🎂✨</p>
+              
+              <p>With all my love and warmest wishes,<br>
+              Always and forever 💖</p>
+            </div>
+            <div class="emoji-burst">🎈🎊🌟💖🎁</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
